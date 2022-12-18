@@ -1,0 +1,9 @@
+{
+  "name": "icons-svg-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "svg-parser": "^2.0.4",
+    "svg-path-parser": "^1.1.0"
+  }
+}
