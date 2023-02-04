@@ -5,6 +5,7 @@ import fs from 'fs';
 const icons = fs.readdirSync("./icons")
 
 const kotlinVectors = []
+const androidVectors = []
 for (const iconFileName of icons) {
     const iconFileContents = fs.readFileSync("./icons/"+iconFileName, "utf8")
     const outputFileName = iconFileName.replaceAll(/(\.svg| )/ig, "")
@@ -15,9 +16,14 @@ for (const iconFileName of icons) {
         name: outputFileName,
         vector: generateKotlinImageVector(outputFileName, svg)
     })
+
+    androidVectors.push({
+        name: outputFileName,
+        vector: generateAndroidImageVector(outputFileName, svg)
+    })
 }
 
-fs.writeFileSync("./output/kotlin/ZnIcons.kt",
+fs.writeFileSync("./output/jetpack/ZnIcons.kt",
     `
 package ru.zation
     
@@ -31,15 +37,49 @@ import androidx.compose.ui.graphics.vector.path
 object ZnIcons {
 `+
     (kotlinVectors.map(it => {
-        return `    val `+it.name.replace('Icon', '')+`: ImageVector = `+it.vector.replaceAll("\n", "\n    ")
+        return `    val `+it.name.replace('Type=', '')+`: ImageVector = `+it.vector.replaceAll("\n", "\n    ")
     }).join('\n')) + `
 }
     `
 )
 
+for (const androidVector of androidVectors) {
+    fs.writeFileSync("./output/android/ic_"+(
+        androidVector.name.replaceAll("Type=", '').toLowerCase()
+    ) +".xml", androidVector.vector)
+}
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function generateAndroidImageVector(name, svg) {
+    const props = svg.children[0].properties
+    let code = `
+        <vector 
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="${props.width}dp"
+            android:height="${props.height}dp"
+            android:viewportWidth="${props.width}"
+            android:viewportHeight="${props.height}">
+    `
+
+    for (const child of svg.children[0].children) {
+        const onParam = (name, action) => child.properties.hasOwnProperty(name) && action(child.properties[name])
+
+        switch (child.tagName) {
+            case "path":
+                code += "<path";
+                onParam("d", d => {
+                    code += " android:pathData=\""+d+"\"";
+                })
+
+                code += " android:fillColor=\"#000000\"/>";
+        }
+    }
+
+    code += "</vector>";
+    return code.trim().replace(/\R/g, "");
 }
 
 function generateKotlinImageVector(name, svg) {
