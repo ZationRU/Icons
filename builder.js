@@ -1,6 +1,7 @@
 import { parse } from 'svg-parser';
 import parsePath from 'svg-path-parser';
 import fs from 'fs';
+import path from 'path';
 
 const icons = fs.readdirSync("./icons")
 
@@ -8,13 +9,13 @@ const kotlinVectors = []
 const androidVectors = []
 for (const iconFileName of icons) {
     const iconFileContents = fs.readFileSync("./icons/"+iconFileName, "utf8")
-    const outputFileName = iconFileName.replaceAll(/(\.svg| )/ig, "")
+    const outputFileName = iconFileName.replaceAll(/(\.svg)/ig, "")
 
     const svg = parse(iconFileContents)
 
     kotlinVectors.push({
-        name: outputFileName,
-        vector: generateKotlinImageVector(outputFileName, svg)
+        name: outputFileName.replaceAll(' ', ''),
+        vector: generateKotlinImageVector(outputFileName.replaceAll(' ', ''), svg)
     })
 
     androidVectors.push({
@@ -37,17 +38,35 @@ import androidx.compose.ui.graphics.vector.path
 object ZnIcons {
 `+
     (kotlinVectors.map(it => {
-        return `    val `+it.name.replace('Type=', '')+`: ImageVector = `+it.vector.replaceAll("\n", "\n    ")
+        return `    val `+
+            it.name
+                .split(",")
+                .map(it => it.replaceAll(/.+?=/g, ''))
+                .join()
+                .replaceAll(',', '')
+            +`: ImageVector = `+it.vector.replaceAll("\n", "\n    ")
     }).join('\n')) + `
 }
     `
 )
 
-for (const androidVector of androidVectors) {
-    fs.writeFileSync("./output/android/ic_"+(
-        androidVector.name.replaceAll("Type=", '').toLowerCase()
-    ) +".xml", androidVector.vector)
-}
+setTimeout(async () => {
+    for (const file of fs.readdirSync("./output/android")) {
+        fs.unlinkSync(path.join("./output/android", file));
+    }
+
+    for (const androidVector of androidVectors) {
+        fs.writeFileSync("./output/android/ic_"+(
+            androidVector.name
+                .replaceAll(' ', '_')
+                .split(",")
+                .map(it => it.replaceAll(/.+?=/g, ''))
+                .join()
+                .replaceAll(',', '_')
+                .toLowerCase()
+        ) +".xml", androidVector.vector)
+    }
+})
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -73,6 +92,9 @@ function generateAndroidImageVector(name, svg) {
                 onParam("d", d => {
                     code += " android:pathData=\""+d+"\"";
                 })
+
+                if(child.properties.hasOwnProperty("fill-rule"))
+                    code += " android:fillType=\""+child.properties['fill-rule'].replace('o', 'O')+"\"";
 
                 code += " android:fillColor=\"#000000\"/>";
         }
