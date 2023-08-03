@@ -1,15 +1,15 @@
 
-package ru.zation
-    
-import androidx.compose.material.icons.materialIcon
-import androidx.compose.material.icons.materialPath
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.graphics.vector.path
-    
-object ZnIcons {
-    val Add: ImageVector = materialIcon(name = "Type=Add") {
+            package ru.zation
+                
+            import androidx.compose.material.icons.materialIcon
+            import androidx.compose.material.icons.materialPath
+            import androidx.compose.ui.graphics.Color
+            import androidx.compose.ui.graphics.SolidColor
+            import androidx.compose.ui.graphics.vector.ImageVector
+            import androidx.compose.ui.graphics.vector.path
+                
+            object ZnIcons {
+                val AddFilled: ImageVector = materialIcon(name = "Type=Add,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -38,7 +38,7 @@ object ZnIcons {
         }
         }
     
-    val Attach: ImageVector = materialIcon(name = "Type=Attach") {
+    val AttachFilled: ImageVector = materialIcon(name = "Type=Attach,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -72,7 +72,7 @@ object ZnIcons {
         }
         }
     
-    val BackArrow: ImageVector = materialIcon(name = "Type=BackArrow") {
+    val BackArrowFilled: ImageVector = materialIcon(name = "Type=BackArrow,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -104,12 +104,12 @@ object ZnIcons {
         }
         }
     
-    val BlurWindow: ImageVector = materialIcon(name = "Type=BlurWindow") {
-        path() { println("Type=BlurWindow: Tag g not supported"); close() }
-            path() { println("Type=BlurWindow: Tag defs not supported"); close() }
+    val BlurWindowFilled: ImageVector = materialIcon(name = "Type=BlurWindow,Style=Filled") {
+        path() { println("Type=BlurWindow,Style=Filled: Tag g not supported"); close() }
+            path() { println("Type=BlurWindow,Style=Filled: Tag defs not supported"); close() }
         }
     
-    val Bold: ImageVector = materialIcon(name = "Type=Bold") {
+    val BoldFilled: ImageVector = materialIcon(name = "Type=Bold,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -244,7 +244,70 @@ object ZnIcons {
         }
         }
     
-    val Close: ImageVector = materialIcon(name = "Type=Close") {
+    val ClockFilled: ImageVector = materialIcon(name = "Type=Clock,Style=Filled") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(12f, 21f)
+                curveTo(16.9706f, 21f, 21f, 16.9706f, 21f, 12f)
+                curveTo(21f, 7.02944f, 16.9706f, 3f, 12f, 3f)
+                curveTo(7.02944f, 3f, 3f, 7.02944f, 3f, 12f)
+                curveTo(3f, 16.9706f, 7.02944f, 21f, 12f, 21f)
+                close()
+                moveTo(11.25f, 7.65f)
+                verticalLineTo(11.9184f)
+                curveTo(11.25f, 12.17f, 11.3449f, 12.4123f, 11.5156f, 12.5971f)
+                lineTo(14.9206f, 16.2811f)
+                curveTo(15.229f, 16.6148f, 15.7563f, 16.6148f, 16.0647f, 16.2811f)
+                curveTo(16.3405f, 15.9826f, 16.3405f, 15.5222f, 16.0647f, 15.2237f)
+                lineTo(13.0156f, 11.9249f)
+                curveTo(12.8449f, 11.7401f, 12.75f, 11.4977f, 12.75f, 11.2461f)
+                verticalLineTo(7.65f)
+                curveTo(12.75f, 7.23579f, 12.4142f, 6.9f, 12f, 6.9f)
+                curveTo(11.5858f, 6.9f, 11.25f, 7.23579f, 11.25f, 7.65f)
+                close()
+                close()
+        }
+        }
+    
+    val ClockOutline: ImageVector = materialIcon(name = "Type=Clock,Style=Outline") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(21f, 12f)
+                curveTo(21f, 16.9706f, 16.9706f, 21f, 12f, 21f)
+                curveTo(7.02944f, 21f, 3f, 16.9706f, 3f, 12f)
+                curveTo(3f, 7.02944f, 7.02944f, 3f, 12f, 3f)
+                curveTo(16.9706f, 3f, 21f, 7.02944f, 21f, 12f)
+                close()
+                moveTo(4.35f, 12f)
+                curveTo(4.35f, 16.225f, 7.77502f, 19.65f, 12f, 19.65f)
+                curveTo(16.225f, 19.65f, 19.65f, 16.225f, 19.65f, 12f)
+                curveTo(19.65f, 7.77502f, 16.225f, 4.35f, 12f, 4.35f)
+                curveTo(7.77502f, 4.35f, 4.35f, 7.77502f, 4.35f, 12f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(11.25f, 7.65f)
+                curveTo(11.25f, 7.23579f, 11.5858f, 6.9f, 12f, 6.9f)
+                curveTo(12.4142f, 6.9f, 12.75f, 7.23579f, 12.75f, 7.65f)
+                verticalLineTo(11.2461f)
+                curveTo(12.75f, 11.4977f, 12.8449f, 11.7401f, 13.0156f, 11.9249f)
+                lineTo(16.0647f, 15.2237f)
+                curveTo(16.3405f, 15.5222f, 16.3405f, 15.9826f, 16.0647f, 16.2811f)
+                curveTo(15.7563f, 16.6148f, 15.229f, 16.6148f, 14.9206f, 16.2811f)
+                lineTo(11.5156f, 12.5971f)
+                curveTo(11.3449f, 12.4123f, 11.25f, 12.17f, 11.25f, 11.9184f)
+                verticalLineTo(7.65f)
+                close()
+                close()
+        }
+        }
+    
+    val CloseFilled: ImageVector = materialIcon(name = "Type=Close,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -365,7 +428,7 @@ object ZnIcons {
         }
         }
     
-    val Debug: ImageVector = materialIcon(name = "Type=Debug") {
+    val DebugFilled: ImageVector = materialIcon(name = "Type=Debug,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -447,32 +510,6 @@ object ZnIcons {
             path(
                 fill=SolidColor(Color.Black),
         ){
-                moveTo(14.6439f, 5.9157f)
-                curveTo(14.3928f, 5.66465f, 14.3928f, 5.25761f, 14.6439f, 5.00656f)
-                lineTo(16.4622f, 3.18829f)
-                curveTo(16.7132f, 2.93724f, 17.1202f, 2.93724f, 17.3713f, 3.18829f)
-                curveTo(17.6223f, 3.43934f, 17.6223f, 3.84637f, 17.3713f, 4.09743f)
-                lineTo(15.553f, 5.9157f)
-                curveTo(15.302f, 6.16675f, 14.8949f, 6.16675f, 14.6439f, 5.9157f)
-                close()
-                close()
-        }
-            path(
-                fill=SolidColor(Color.Black),
-        ){
-                moveTo(6.904f, 3.18841f)
-                curveTo(7.15505f, 2.93736f, 7.56209f, 2.93736f, 7.81314f, 3.18841f)
-                lineTo(9.63141f, 5.00669f)
-                curveTo(9.88247f, 5.25774f, 9.88247f, 5.66477f, 9.63141f, 5.91582f)
-                curveTo(9.38036f, 6.16687f, 8.97333f, 6.16687f, 8.72228f, 5.91582f)
-                lineTo(6.904f, 4.09755f)
-                curveTo(6.65295f, 3.8465f, 6.65295f, 3.43946f, 6.904f, 3.18841f)
-                close()
-                close()
-        }
-            path(
-                fill=SolidColor(Color.Black),
-        ){
                 moveTo(6.904f, 3.18841f)
                 curveTo(7.15505f, 2.93736f, 7.56209f, 2.93736f, 7.81314f, 3.18841f)
                 lineTo(9.63141f, 5.00669f)
@@ -530,12 +567,316 @@ object ZnIcons {
             path(
                 fill=SolidColor(Color.Black),
         ){
+                moveTo(8.14286f, 8.96811f)
+                verticalLineTo(12.1824f)
+                verticalLineTo(16.0395f)
+                verticalLineTo(16.6824f)
+                curveTo(8.14286f, 18.8126f, 9.86976f, 19.7143f, 12f, 19.7143f)
+                curveTo(14.1302f, 19.7143f, 15.8571f, 18.8126f, 15.8571f, 16.6824f)
+                verticalLineTo(16.0395f)
+                verticalLineTo(12.1824f)
+                verticalLineTo(8.96811f)
+                curveTo(15.8571f, 6.83787f, 14.1302f, 5.11097f, 12f, 5.11097f)
+                curveTo(9.86976f, 5.11097f, 8.14286f, 6.83787f, 8.14286f, 8.96811f)
+                close()
+                close()
+        }
+        }
+    
+    val DebugOutline: ImageVector = materialIcon(name = "Type=Debug,Style=Outline") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(8.14286f, 12.1824f)
+                verticalLineTo(8.96811f)
+                curveTo(8.14286f, 6.83787f, 9.86976f, 5.11097f, 12f, 5.11097f)
+                curveTo(14.1302f, 5.11097f, 15.8571f, 6.83787f, 15.8571f, 8.96811f)
+                verticalLineTo(12.1824f)
+                curveTo(15.8571f, 11.8274f, 16.145f, 11.5395f, 16.5f, 11.5395f)
+                horizontalLineTo(17.1429f)
+                verticalLineTo(8.96811f)
+                horizontalLineTo(16.5f)
+                curveTo(16.145f, 8.96811f, 15.8571f, 8.6803f, 15.8571f, 8.32526f)
+                curveTo(15.8571f, 7.97022f, 16.145f, 7.6824f, 16.5f, 7.6824f)
+                horizontalLineTo(16.9808f)
+                lineTo(16.977f, 7.66744f)
+                curveTo(16.7737f, 6.88766f, 16.3921f, 6.17993f, 15.8783f, 5.59044f)
+                lineTo(15.553f, 5.9157f)
+                curveTo(15.302f, 6.16675f, 14.8949f, 6.16675f, 14.6439f, 5.9157f)
+                curveTo(14.3928f, 5.66465f, 14.3928f, 5.25761f, 14.6439f, 5.00656f)
+                lineTo(14.9179f, 4.73257f)
+                curveTo(14.0888f, 4.16035f, 13.0836f, 3.82526f, 12f, 3.82526f)
+                curveTo(10.9876f, 3.82526f, 10.0435f, 4.11779f, 9.24768f, 4.62295f)
+                lineTo(9.63141f, 5.00669f)
+                curveTo(9.88247f, 5.25774f, 9.88247f, 5.66477f, 9.63141f, 5.91582f)
+                curveTo(9.38036f, 6.16687f, 8.97333f, 6.16687f, 8.72228f, 5.91582f)
+                lineTo(8.25247f, 5.44602f)
+                curveTo(8.23963f, 5.45967f, 8.22686f, 5.4734f, 8.21417f, 5.4872f)
+                curveTo(7.65022f, 6.10023f, 7.23326f, 6.85059f, 7.01917f, 7.6824f)
+                horizontalLineTo(7.5f)
+                curveTo(7.85504f, 7.6824f, 8.14286f, 7.97022f, 8.14286f, 8.32526f)
+                curveTo(8.14286f, 8.6803f, 7.85504f, 8.96811f, 7.5f, 8.96811f)
+                lineTo(6.85714f, 8.96811f)
+                verticalLineTo(11.5395f)
+                horizontalLineTo(7.5f)
+                curveTo(7.85504f, 11.5395f, 8.14286f, 11.8274f, 8.14286f, 12.1824f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
                 moveTo(6.85714f, 8.96811f)
                 lineTo(7.5f, 8.96811f)
                 curveTo(7.85504f, 8.96811f, 8.14286f, 8.6803f, 8.14286f, 8.32526f)
                 curveTo(8.14286f, 7.97022f, 7.85504f, 7.6824f, 7.5f, 7.6824f)
                 horizontalLineTo(7.01917f)
                 curveTo(6.9134f, 8.09334f, 6.85714f, 8.52416f, 6.85714f, 8.96811f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(3.64286f, 8.96811f)
+                lineTo(6.85714f, 8.96811f)
+                curveTo(6.85714f, 8.52416f, 6.9134f, 8.09334f, 7.01917f, 7.6824f)
+                horizontalLineTo(3.64286f)
+                curveTo(3.28782f, 7.6824f, 3f, 7.97022f, 3f, 8.32526f)
+                curveTo(3f, 8.6803f, 3.28782f, 8.96811f, 3.64286f, 8.96811f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(3f, 12.1824f)
+                curveTo(3f, 12.5374f, 3.28782f, 12.8253f, 3.64286f, 12.8253f)
+                horizontalLineTo(6.85714f)
+                verticalLineTo(11.5395f)
+                horizontalLineTo(3.64286f)
+                curveTo(3.28782f, 11.5395f, 3f, 11.8274f, 3f, 12.1824f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(3.64286f, 16.6824f)
+                horizontalLineTo(6.85714f)
+                verticalLineTo(15.3967f)
+                horizontalLineTo(3.64286f)
+                curveTo(3.28782f, 15.3967f, 3f, 15.6845f, 3f, 16.0395f)
+                curveTo(3f, 16.3946f, 3.28782f, 16.6824f, 3.64286f, 16.6824f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(6.85714f, 16.6824f)
+                horizontalLineTo(7.5f)
+                curveTo(7.85504f, 16.6824f, 8.14286f, 16.3946f, 8.14286f, 16.0395f)
+                curveTo(8.14286f, 15.6845f, 7.85504f, 15.3967f, 7.5f, 15.3967f)
+                horizontalLineTo(6.85714f)
+                verticalLineTo(16.6824f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(7.5f, 12.8253f)
+                curveTo(7.85504f, 12.8253f, 8.14286f, 12.5374f, 8.14286f, 12.1824f)
+                curveTo(8.14286f, 11.8274f, 7.85504f, 11.5395f, 7.5f, 11.5395f)
+                horizontalLineTo(6.85714f)
+                verticalLineTo(12.8253f)
+                horizontalLineTo(7.5f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(8.14286f, 16.0395f)
+                verticalLineTo(12.1824f)
+                curveTo(8.14286f, 12.5374f, 7.85504f, 12.8253f, 7.5f, 12.8253f)
+                horizontalLineTo(6.85714f)
+                verticalLineTo(15.3967f)
+                horizontalLineTo(7.5f)
+                curveTo(7.85504f, 15.3967f, 8.14286f, 15.6845f, 8.14286f, 16.0395f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(8.14286f, 16.6824f)
+                verticalLineTo(16.0395f)
+                curveTo(8.14286f, 16.3946f, 7.85504f, 16.6824f, 7.5f, 16.6824f)
+                horizontalLineTo(6.85714f)
+                curveTo(6.85714f, 19.5227f, 9.15968f, 21f, 12f, 21f)
+                curveTo(14.8403f, 21f, 17.1429f, 19.5227f, 17.1429f, 16.6824f)
+                horizontalLineTo(16.5f)
+                curveTo(16.145f, 16.6824f, 15.8571f, 16.3946f, 15.8571f, 16.0395f)
+                verticalLineTo(16.6824f)
+                curveTo(15.8571f, 18.8126f, 14.1302f, 19.7143f, 12f, 19.7143f)
+                curveTo(9.86976f, 19.7143f, 8.14286f, 18.8126f, 8.14286f, 16.6824f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(16.5f, 16.6824f)
+                horizontalLineTo(17.1429f)
+                verticalLineTo(15.3967f)
+                horizontalLineTo(16.5f)
+                curveTo(16.145f, 15.3967f, 15.8571f, 15.6845f, 15.8571f, 16.0395f)
+                curveTo(15.8571f, 16.3946f, 16.145f, 16.6824f, 16.5f, 16.6824f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(8.25247f, 5.44602f)
+                curveTo(8.54775f, 5.13195f, 8.88207f, 4.85502f, 9.24768f, 4.62295f)
+                lineTo(9.63141f, 5.00669f)
+                curveTo(9.88247f, 5.25774f, 9.88247f, 5.66477f, 9.63141f, 5.91582f)
+                curveTo(9.38036f, 6.16687f, 8.97333f, 6.16687f, 8.72228f, 5.91582f)
+                lineTo(8.25247f, 5.44602f)
+                close()
+                moveTo(15.8571f, 12.1824f)
+                verticalLineTo(16.0395f)
+                curveTo(15.8571f, 15.6845f, 16.145f, 15.3967f, 16.5f, 15.3967f)
+                horizontalLineTo(17.1429f)
+                verticalLineTo(12.8253f)
+                verticalLineTo(11.5395f)
+                horizontalLineTo(16.5f)
+                curveTo(16.145f, 11.5395f, 15.8571f, 11.8274f, 15.8571f, 12.1824f)
+                close()
+                moveTo(16.9808f, 7.6824f)
+                curveTo(17.0866f, 8.09334f, 17.1429f, 8.52416f, 17.1429f, 8.96811f)
+                horizontalLineTo(16.5f)
+                curveTo(16.145f, 8.96811f, 15.8571f, 8.6803f, 15.8571f, 8.32526f)
+                curveTo(15.8571f, 7.97022f, 16.145f, 7.6824f, 16.5f, 7.6824f)
+                horizontalLineTo(16.9808f)
+                close()
+                moveTo(14.9179f, 4.73257f)
+                curveTo(15.2729f, 4.97761f, 15.5956f, 5.26613f, 15.8783f, 5.59044f)
+                lineTo(15.553f, 5.9157f)
+                curveTo(15.302f, 6.16675f, 14.8949f, 6.16675f, 14.6439f, 5.9157f)
+                curveTo(14.3928f, 5.66465f, 14.3928f, 5.25761f, 14.6439f, 5.00656f)
+                lineTo(14.9179f, 4.73257f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(17.1429f, 16.6824f)
+                horizontalLineTo(20.3571f)
+                curveTo(20.7122f, 16.6824f, 21f, 16.3946f, 21f, 16.0395f)
+                curveTo(21f, 15.6845f, 20.7122f, 15.3967f, 20.3571f, 15.3967f)
+                horizontalLineTo(17.1429f)
+                verticalLineTo(16.6824f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(16.5f, 11.5395f)
+                curveTo(16.145f, 11.5395f, 15.8571f, 11.8274f, 15.8571f, 12.1824f)
+                curveTo(15.8571f, 12.5374f, 16.145f, 12.8253f, 16.5f, 12.8253f)
+                horizontalLineTo(17.1429f)
+                verticalLineTo(11.5395f)
+                horizontalLineTo(16.5f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(20.3571f, 12.8253f)
+                curveTo(20.7122f, 12.8253f, 21f, 12.5374f, 21f, 12.1824f)
+                curveTo(21f, 11.8274f, 20.7122f, 11.5395f, 20.3571f, 11.5395f)
+                horizontalLineTo(17.1429f)
+                verticalLineTo(12.8253f)
+                horizontalLineTo(20.3571f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(16.5f, 7.6824f)
+                curveTo(16.145f, 7.6824f, 15.8571f, 7.97022f, 15.8571f, 8.32526f)
+                curveTo(15.8571f, 8.6803f, 16.145f, 8.96811f, 16.5f, 8.96811f)
+                horizontalLineTo(17.1429f)
+                curveTo(17.1429f, 8.52416f, 17.0866f, 8.09334f, 16.9808f, 7.6824f)
+                horizontalLineTo(16.5f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(17.1429f, 8.96811f)
+                horizontalLineTo(20.3571f)
+                curveTo(20.7122f, 8.96811f, 21f, 8.6803f, 21f, 8.32526f)
+                curveTo(21f, 7.97022f, 20.7122f, 7.6824f, 20.3571f, 7.6824f)
+                horizontalLineTo(16.9808f)
+                curveTo(17.0866f, 8.09334f, 17.1429f, 8.52416f, 17.1429f, 8.96811f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(14.6439f, 5.00656f)
+                curveTo(14.3928f, 5.25761f, 14.3928f, 5.66465f, 14.6439f, 5.9157f)
+                curveTo(14.8949f, 6.16675f, 15.302f, 6.16675f, 15.553f, 5.9157f)
+                lineTo(15.8783f, 5.59044f)
+                curveTo(15.5956f, 5.26613f, 15.2729f, 4.97761f, 14.9179f, 4.73257f)
+                lineTo(14.6439f, 5.00656f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(17.3713f, 4.09743f)
+                curveTo(17.6223f, 3.84637f, 17.6223f, 3.43934f, 17.3713f, 3.18829f)
+                curveTo(17.1202f, 2.93724f, 16.7132f, 2.93724f, 16.4622f, 3.18829f)
+                lineTo(14.9179f, 4.73257f)
+                curveTo(15.2729f, 4.97761f, 15.5956f, 5.26613f, 15.8783f, 5.59044f)
+                lineTo(17.3713f, 4.09743f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(9.63141f, 5.00669f)
+                lineTo(9.24768f, 4.62295f)
+                curveTo(8.88207f, 4.85502f, 8.54775f, 5.13195f, 8.25247f, 5.44602f)
+                lineTo(8.72228f, 5.91582f)
+                curveTo(8.97333f, 6.16687f, 9.38036f, 6.16687f, 9.63141f, 5.91582f)
+                curveTo(9.88247f, 5.66477f, 9.88247f, 5.25774f, 9.63141f, 5.00669f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(6.904f, 3.18841f)
+                curveTo(6.65295f, 3.43946f, 6.65295f, 3.8465f, 6.904f, 4.09755f)
+                lineTo(8.25247f, 5.44602f)
+                curveTo(8.54775f, 5.13195f, 8.88207f, 4.85502f, 9.24768f, 4.62295f)
+                lineTo(7.81314f, 3.18841f)
+                curveTo(7.56209f, 2.93736f, 7.15505f, 2.93736f, 6.904f, 3.18841f)
                 close()
                 close()
         }
@@ -587,7 +928,7 @@ object ZnIcons {
         }
         }
     
-    val Dislike: ImageVector = materialIcon(name = "Type=Dislike") {
+    val DislikeFilled: ImageVector = materialIcon(name = "Type=Dislike,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -622,7 +963,7 @@ object ZnIcons {
         }
         }
     
-    val Done: ImageVector = materialIcon(name = "Type=Done") {
+    val DoneFilled: ImageVector = materialIcon(name = "Type=Done,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -641,7 +982,7 @@ object ZnIcons {
         }
         }
     
-    val Download: ImageVector = materialIcon(name = "Type=Download") {
+    val DownloadFilled: ImageVector = materialIcon(name = "Type=Download,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -694,7 +1035,101 @@ object ZnIcons {
         }
         }
     
-    val Home: ImageVector = materialIcon(name = "Type=Home") {
+    val GameOutline: ImageVector = materialIcon(name = "Type=Game,Style=Outline") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(21.9946f, 17.034f)
+                lineTo(21.3266f, 8.2585f)
+                curveTo(21.1832f, 6.40903f, 19.5782f, 4.98395f, 17.657f, 5.00014f)
+                lineTo(6.12241f, 5.0973f)
+                curveTo(4.20072f, 5.11349f, 2.62159f, 6.56598f, 2.51217f, 8.41801f)
+                lineTo(2.00313f, 17.034f)
+                curveTo(1.94102f, 18.0853f, 2.81262f, 18.9682f, 3.90342f, 18.959f)
+                lineTo(4.92883f, 18.9504f)
+                curveTo(5.83004f, 18.9428f, 6.59988f, 18.3211f, 6.76667f, 17.4661f)
+                lineTo(7.09434f, 15.7866f)
+                curveTo(7.26113f, 14.9316f, 8.03096f, 14.3099f, 8.93217f, 14.3023f)
+                lineTo(15.0171f, 14.2511f)
+                curveTo(15.9165f, 14.2435f, 16.6964f, 14.8498f, 16.8805f, 15.6996f)
+                lineTo(17.2372f, 17.5514f)
+                curveTo(17.4213f, 18.4012f, 18.2012f, 19.0075f, 19.1006f, 18.9999f)
+                lineTo(20.1295f, 18.9913f)
+                curveTo(21.2205f, 18.9821f, 22.0761f, 18.0842f, 21.9946f, 17.034f)
+                close()
+                moveTo(16.9288f, 9.37776f)
+                curveTo(17.4498f, 9.37337f, 17.8685f, 8.9621f, 17.8639f, 8.45916f)
+                curveTo(17.8594f, 7.95622f, 17.4333f, 7.55206f, 16.9123f, 7.55645f)
+                curveTo(16.3913f, 7.56084f, 15.9726f, 7.97211f, 15.9771f, 8.47505f)
+                curveTo(15.9817f, 8.97799f, 16.4077f, 9.38215f, 16.9288f, 9.37776f)
+                close()
+                moveTo(15.5042f, 11.8183f)
+                curveTo(16.0252f, 11.8139f, 16.4439f, 11.4027f, 16.4393f, 10.8997f)
+                curveTo(16.4348f, 10.3968f, 16.0087f, 9.99264f, 15.4877f, 9.99703f)
+                curveTo(14.9667f, 10.0014f, 14.548f, 10.4127f, 14.5525f, 10.9156f)
+                curveTo(14.5571f, 11.4186f, 14.9831f, 11.8227f, 15.5042f, 11.8183f)
+                close()
+                moveTo(18.5231f, 11.7929f)
+                curveTo(19.0441f, 11.7885f, 19.4628f, 11.3773f, 19.4582f, 10.8743f)
+                curveTo(19.4537f, 10.3714f, 19.0276f, 9.96722f, 18.5066f, 9.97161f)
+                curveTo(17.9856f, 9.97599f, 17.5669f, 10.3873f, 17.5714f, 10.8902f)
+                curveTo(17.576f, 11.3931f, 18.002f, 11.7973f, 18.5231f, 11.7929f)
+                close()
+                moveTo(7.70916f, 12.309f)
+                curveTo(7.3618f, 12.312f, 7.07776f, 12.0425f, 7.07473f, 11.7072f)
+                lineTo(7.06375f, 10.493f)
+                lineTo(5.80587f, 10.5036f)
+                curveTo(5.45851f, 10.5065f, 5.17447f, 10.2371f, 5.17144f, 9.9018f)
+                curveTo(5.16841f, 9.56651f, 5.44754f, 9.29233f, 5.79489f, 9.2894f)
+                lineTo(7.05277f, 9.27881f)
+                lineTo(7.04179f, 8.0646f)
+                curveTo(7.03876f, 7.72931f, 7.31789f, 7.45512f, 7.66525f, 7.4522f)
+                curveTo(8.0126f, 7.44927f, 8.29664f, 7.71871f, 8.29968f, 8.054f)
+                lineTo(8.31065f, 9.26821f)
+                lineTo(9.56853f, 9.25761f)
+                curveTo(9.91589f, 9.25469f, 10.1999f, 9.52413f, 10.203f, 9.85942f)
+                curveTo(10.206f, 10.1947f, 9.92687f, 10.4689f, 9.57951f, 10.4718f)
+                lineTo(8.32163f, 10.4824f)
+                lineTo(8.33261f, 11.6966f)
+                curveTo(8.33564f, 12.0319f, 8.05651f, 12.3061f, 7.70916f, 12.309f)
+                close()
+                close()
+        }
+        }
+    
+    val GoogleOutline: ImageVector = materialIcon(name = "Type=Google,Style=Outline") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(20.5077f, 10.3783f)
+                curveTo(20.6126f, 10.9824f, 20.665f, 11.5944f, 20.6641f, 12.2075f)
+                curveTo(20.6641f, 14.9457f, 19.6853f, 17.2609f, 17.9821f, 18.8279f)
+                horizontalLineTo(17.9844f)
+                curveTo(16.4949f, 20.2038f, 14.4475f, 21.0002f, 12.0198f, 21.0002f)
+                curveTo(9.6329f, 21.0002f, 7.34377f, 20.0521f, 5.65599f, 18.3643f)
+                curveTo(3.96821f, 16.6765f, 3.02002f, 14.3874f, 3.02002f, 12.0005f)
+                curveTo(3.02002f, 9.61367f, 3.96821f, 7.32456f, 5.65599f, 5.63679f)
+                curveTo(7.34377f, 3.94902f, 9.6329f, 3.00084f, 12.0198f, 3.00084f)
+                curveTo(14.2539f, 2.97467f, 16.4115f, 3.814f, 18.0406f, 5.34301f)
+                lineTo(15.4712f, 7.91243f)
+                curveTo(14.5424f, 7.02705f, 13.3028f, 6.54221f, 12.0198f, 6.56247f)
+                curveTo(9.67197f, 6.56247f, 7.6774f, 8.14642f, 6.96642f, 10.2793f)
+                curveTo(6.58945f, 11.397f, 6.58945f, 12.6075f, 6.96642f, 13.7251f)
+                horizontalLineTo(6.96979f)
+                curveTo(7.68415f, 15.8547f, 9.67535f, 17.4386f, 12.0232f, 17.4386f)
+                curveTo(13.2359f, 17.4386f, 14.2776f, 17.1281f, 15.0853f, 16.5791f)
+                horizontalLineTo(15.082f)
+                curveTo(15.551f, 16.2684f, 15.9522f, 15.8659f, 16.2613f, 15.3959f)
+                curveTo(16.5705f, 14.9259f, 16.7812f, 14.3981f, 16.8808f, 13.8444f)
+                horizontalLineTo(12.0198f)
+                verticalLineTo(10.3795f)
+                lineTo(20.5077f, 10.3783f)
+                close()
+                close()
+        }
+        }
+    
+    val HomeFilled: ImageVector = materialIcon(name = "Type=Home,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -721,32 +1156,8 @@ object ZnIcons {
         }
         }
     
-    val Info: ImageVector = materialIcon(name = "Type=Info") {
+    val InfoFilled: ImageVector = materialIcon(name = "Type=Info,Style=Filled") {
         path(
-                fill=SolidColor(Color.Black),
-        ){
-                moveTo(12.9f, 7.5f)
-                curveTo(12.9f, 7.99706f, 12.4971f, 8.4f, 12f, 8.4f)
-                curveTo(11.5029f, 8.4f, 11.1f, 7.99706f, 11.1f, 7.5f)
-                curveTo(11.1f, 7.00294f, 11.5029f, 6.6f, 12f, 6.6f)
-                curveTo(12.4971f, 6.6f, 12.9f, 7.00294f, 12.9f, 7.5f)
-                close()
-                close()
-        }
-            path(
-                fill=SolidColor(Color.Black),
-        ){
-                moveTo(11.1f, 11.1f)
-                curveTo(11.1f, 10.6029f, 11.5029f, 10.2f, 12f, 10.2f)
-                curveTo(12.4971f, 10.2f, 12.9f, 10.6029f, 12.9f, 11.1f)
-                verticalLineTo(17.4f)
-                curveTo(12.9f, 17.8971f, 12.4971f, 18.3f, 12f, 18.3f)
-                curveTo(11.5029f, 18.3f, 11.1f, 17.8971f, 11.1f, 17.4f)
-                verticalLineTo(11.1f)
-                close()
-                close()
-        }
-            path(
                 fill=SolidColor(Color.Black),
         ){
                 moveTo(21f, 12f)
@@ -755,17 +1166,59 @@ object ZnIcons {
                 curveTo(3f, 7.02944f, 7.02944f, 3f, 12f, 3f)
                 curveTo(16.9706f, 3f, 21f, 7.02944f, 21f, 12f)
                 close()
-                moveTo(4.35f, 12f)
-                curveTo(4.35f, 16.225f, 7.77502f, 19.65f, 12f, 19.65f)
-                curveTo(16.225f, 19.65f, 19.65f, 16.225f, 19.65f, 12f)
-                curveTo(19.65f, 7.77502f, 16.225f, 4.35f, 12f, 4.35f)
-                curveTo(7.77502f, 4.35f, 4.35f, 7.77502f, 4.35f, 12f)
+                moveTo(13.5f, 7.5f)
+                curveTo(13.5f, 8.32843f, 12.8284f, 9f, 12f, 9f)
+                curveTo(11.1716f, 9f, 10.5f, 8.32843f, 10.5f, 7.5f)
+                curveTo(10.5f, 6.67157f, 11.1716f, 6f, 12f, 6f)
+                curveTo(12.8284f, 6f, 13.5f, 6.67157f, 13.5f, 7.5f)
+                close()
+                moveTo(13.5f, 17f)
+                verticalLineTo(12f)
+                curveTo(13.5f, 11f, 12.8284f, 10.5f, 12f, 10.5f)
+                curveTo(11.1716f, 10.5f, 10.5f, 11f, 10.5f, 12f)
+                verticalLineTo(17f)
+                curveTo(10.5f, 18f, 11.1716f, 18.5f, 12f, 18.5f)
+                curveTo(12.8284f, 18.5f, 13.5f, 18f, 13.5f, 17f)
                 close()
                 close()
         }
         }
     
-    val Italic: ImageVector = materialIcon(name = "Type=Italic") {
+    val InfoOutline: ImageVector = materialIcon(name = "Type=Info,Style=Outline") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(21f, 12f)
+                curveTo(21f, 16.9706f, 16.9706f, 21f, 12f, 21f)
+                curveTo(7.02944f, 21f, 3f, 16.9706f, 3f, 12f)
+                curveTo(3f, 7.02944f, 7.02944f, 3f, 12f, 3f)
+                curveTo(16.9706f, 3f, 21f, 7.02944f, 21f, 12f)
+                close()
+                moveTo(12f, 19.65f)
+                curveTo(7.77502f, 19.65f, 4.35f, 16.225f, 4.35f, 12f)
+                curveTo(4.35f, 7.77502f, 7.77502f, 4.35f, 12f, 4.35f)
+                curveTo(16.225f, 4.35f, 19.65f, 7.77502f, 19.65f, 12f)
+                curveTo(19.65f, 16.225f, 16.225f, 19.65f, 12f, 19.65f)
+                close()
+                moveTo(12.9f, 7.5f)
+                curveTo(12.9f, 7.99706f, 12.4971f, 8.4f, 12f, 8.4f)
+                curveTo(11.5029f, 8.4f, 11.1f, 7.99706f, 11.1f, 7.5f)
+                curveTo(11.1f, 7.00294f, 11.5029f, 6.6f, 12f, 6.6f)
+                curveTo(12.4971f, 6.6f, 12.9f, 7.00294f, 12.9f, 7.5f)
+                close()
+                moveTo(12.9f, 11.1f)
+                verticalLineTo(17.4f)
+                curveTo(12.9f, 17.8971f, 12.4971f, 18.3f, 12f, 18.3f)
+                curveTo(11.5029f, 18.3f, 11.1f, 17.8971f, 11.1f, 17.4f)
+                verticalLineTo(11.1f)
+                curveTo(11.1f, 10.6029f, 11.5029f, 10.2f, 12f, 10.2f)
+                curveTo(12.4971f, 10.2f, 12.9f, 10.6029f, 12.9f, 11.1f)
+                close()
+                close()
+        }
+        }
+    
+    val ItalicFilled: ImageVector = materialIcon(name = "Type=Italic,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -779,7 +1232,7 @@ object ZnIcons {
         }
         }
     
-    val Like: ImageVector = materialIcon(name = "Type=Like") {
+    val LikeFilled: ImageVector = materialIcon(name = "Type=Like,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -814,7 +1267,7 @@ object ZnIcons {
         }
         }
     
-    val Logout: ImageVector = materialIcon(name = "Type=Logout") {
+    val LogoutFilled: ImageVector = materialIcon(name = "Type=Logout,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -867,7 +1320,7 @@ object ZnIcons {
         }
         }
     
-    val Mail: ImageVector = materialIcon(name = "Type=Mail") {
+    val MailFilled: ImageVector = materialIcon(name = "Type=Mail,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -887,7 +1340,7 @@ object ZnIcons {
         }
         }
     
-    val MaximizeWindow: ImageVector = materialIcon(name = "Type=MaximizeWindow") {
+    val MaximizeWindowFilled: ImageVector = materialIcon(name = "Type=MaximizeWindow,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -915,7 +1368,101 @@ object ZnIcons {
         }
         }
     
-    val Menu: ImageVector = materialIcon(name = "Type=Menu") {
+    val MentitionFilled: ImageVector = materialIcon(name = "Type=Mentition,Style=Filled") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(21f, 19f)
+                curveTo(21f, 20.1046f, 20.1046f, 21f, 19f, 21f)
+                horizontalLineTo(9f)
+                curveTo(5.68629f, 21f, 3f, 18.3137f, 3f, 15f)
+                verticalLineTo(9f)
+                curveTo(3f, 5.68629f, 5.68629f, 3f, 9f, 3f)
+                horizontalLineTo(15f)
+                curveTo(18.3137f, 3f, 21f, 5.68629f, 21f, 9f)
+                verticalLineTo(19f)
+                close()
+                moveTo(9f, 18f)
+                curveTo(7.34315f, 18f, 6f, 16.6569f, 6f, 15f)
+                verticalLineTo(9f)
+                curveTo(6f, 7.34315f, 7.34315f, 6f, 9f, 6f)
+                horizontalLineTo(15f)
+                curveTo(16.6569f, 6f, 18f, 7.34315f, 18f, 9f)
+                verticalLineTo(13f)
+                curveTo(18f, 13.5523f, 17.5523f, 14f, 17f, 14f)
+                curveTo(16.4477f, 14f, 16f, 13.5523f, 16f, 13f)
+                verticalLineTo(10f)
+                curveTo(16f, 8.89543f, 15.1046f, 8f, 14f, 8f)
+                horizontalLineTo(10f)
+                curveTo(8.89543f, 8f, 8f, 8.89543f, 8f, 10f)
+                verticalLineTo(14f)
+                curveTo(8f, 15.1046f, 8.89543f, 16f, 10f, 16f)
+                horizontalLineTo(17f)
+                curveTo(17.5523f, 16f, 18f, 16.4477f, 18f, 17f)
+                curveTo(18f, 17.5523f, 17.5523f, 18f, 17f, 18f)
+                horizontalLineTo(9f)
+                close()
+                moveTo(11.5f, 14.5f)
+                curveTo(10.3954f, 14.5f, 9.5f, 13.6046f, 9.5f, 12.5f)
+                verticalLineTo(11.5f)
+                curveTo(9.5f, 10.3954f, 10.3954f, 9.5f, 11.5f, 9.5f)
+                horizontalLineTo(12.5f)
+                curveTo(13.6046f, 9.5f, 14.5f, 10.3954f, 14.5f, 11.5f)
+                verticalLineTo(12.5f)
+                curveTo(14.5f, 13.6046f, 13.6046f, 14.5f, 12.5f, 14.5f)
+                horizontalLineTo(11.5f)
+                close()
+                close()
+        }
+        }
+    
+    val MentitionOutline: ImageVector = materialIcon(name = "Type=Mentition,Style=Outline") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(9f, 3f)
+                curveTo(5.68629f, 3f, 3f, 5.68629f, 3f, 9f)
+                verticalLineTo(15f)
+                curveTo(3f, 18.3137f, 5.68629f, 21f, 9f, 21f)
+                horizontalLineTo(17.75f)
+                curveTo(18.1642f, 21f, 18.5f, 20.6642f, 18.5f, 20.25f)
+                curveTo(18.5f, 19.8358f, 18.1642f, 19.5f, 17.75f, 19.5f)
+                horizontalLineTo(9.5f)
+                curveTo(6.73858f, 19.5f, 4.5f, 17.2614f, 4.5f, 14.5f)
+                verticalLineTo(9.5f)
+                curveTo(4.5f, 6.73858f, 6.73858f, 4.5f, 9.5f, 4.5f)
+                horizontalLineTo(14.5f)
+                curveTo(17.2614f, 4.5f, 19.5f, 6.73858f, 19.5f, 9.5f)
+                verticalLineTo(13.8333f)
+                curveTo(19.5f, 14.7538f, 18.7538f, 15.5f, 17.8333f, 15.5f)
+                curveTo(17.3731f, 15.5f, 17f, 15.1269f, 17f, 14.6667f)
+                verticalLineTo(11f)
+                curveTo(17f, 8.79086f, 15.2091f, 7f, 13f, 7f)
+                horizontalLineTo(11f)
+                curveTo(8.79086f, 7f, 7f, 8.79086f, 7f, 11f)
+                verticalLineTo(13f)
+                curveTo(7f, 15.2091f, 8.79086f, 17f, 11f, 17f)
+                horizontalLineTo(18f)
+                curveTo(19.6569f, 17f, 21f, 15.6569f, 21f, 14f)
+                verticalLineTo(9f)
+                curveTo(21f, 5.68629f, 18.3137f, 3f, 15f, 3f)
+                horizontalLineTo(9f)
+                close()
+                moveTo(15.5f, 11.5f)
+                curveTo(15.5f, 9.84315f, 14.1569f, 8.5f, 12.5f, 8.5f)
+                horizontalLineTo(11.5f)
+                curveTo(9.84315f, 8.5f, 8.5f, 9.84315f, 8.5f, 11.5f)
+                verticalLineTo(12.5f)
+                curveTo(8.5f, 14.1569f, 9.84315f, 15.5f, 11.5f, 15.5f)
+                horizontalLineTo(12.5f)
+                curveTo(14.1569f, 15.5f, 15.5f, 14.1569f, 15.5f, 12.5f)
+                verticalLineTo(11.5f)
+                close()
+                close()
+        }
+        }
+    
+    val MenuFilled: ImageVector = materialIcon(name = "Type=Menu,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -957,7 +1504,7 @@ object ZnIcons {
         }
         }
     
-    val MinimizeWindow: ImageVector = materialIcon(name = "Type=MinimizeWindow") {
+    val MinimizeWindowFilled: ImageVector = materialIcon(name = "Type=MinimizeWindow,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1012,7 +1559,7 @@ object ZnIcons {
         }
         }
     
-    val More: ImageVector = materialIcon(name = "Type=More") {
+    val MoreFilled: ImageVector = materialIcon(name = "Type=More,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1048,8 +1595,47 @@ object ZnIcons {
         }
         }
     
-    val Newsfeed: ImageVector = materialIcon(name = "Type=Newsfeed") {
+    val NewsfeedOutline: ImageVector = materialIcon(name = "Type=Newsfeed,Style=Outline") {
         path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(5.5f, 14f)
+                horizontalLineTo(18.5f)
+                curveTo(18.7761f, 14f, 19f, 14.2239f, 19f, 14.5f)
+                curveTo(19f, 14.7761f, 18.7761f, 15f, 18.5f, 15f)
+                horizontalLineTo(5.5f)
+                curveTo(5.22386f, 15f, 5f, 14.7761f, 5f, 14.5f)
+                curveTo(5f, 14.2239f, 5.22386f, 14f, 5.5f, 14f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(9.5f, 16f)
+                lineTo(15.5f, 16f)
+                curveTo(15.7761f, 16f, 16f, 16.2238f, 16f, 16.5f)
+                curveTo(16f, 16.7761f, 15.7761f, 17f, 15.5f, 17f)
+                lineTo(9.5f, 17f)
+                curveTo(9.22386f, 17f, 9f, 16.7761f, 9f, 16.5f)
+                curveTo(9f, 16.2239f, 9.22386f, 16f, 9.5f, 16f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(9.5f, 18f)
+                horizontalLineTo(18.5f)
+                curveTo(18.7761f, 18f, 19f, 18.2239f, 19f, 18.5f)
+                curveTo(19f, 18.7761f, 18.7761f, 19f, 18.5f, 19f)
+                horizontalLineTo(9.5f)
+                curveTo(9.22386f, 19f, 9f, 18.7761f, 9f, 18.5f)
+                curveTo(9f, 18.2239f, 9.22386f, 18f, 9.5f, 18f)
+                close()
+                close()
+        }
+            path(
                 fill=SolidColor(Color.Black),
         ){
                 moveTo(8f, 17.5f)
@@ -1063,61 +1649,22 @@ object ZnIcons {
             path(
                 fill=SolidColor(Color.Black),
         ){
-                moveTo(9f, 16.5f)
-                curveTo(9f, 16.2239f, 9.22386f, 16f, 9.5f, 16f)
-                lineTo(15.5f, 16f)
-                curveTo(15.7761f, 16f, 16f, 16.2238f, 16f, 16.5f)
-                curveTo(16f, 16.7761f, 15.7761f, 17f, 15.5f, 17f)
-                lineTo(9.5f, 17f)
-                curveTo(9.22386f, 17f, 9f, 16.7761f, 9f, 16.5f)
-                close()
-                close()
-        }
-            path(
-                fill=SolidColor(Color.Black),
-        ){
-                moveTo(9f, 18.5f)
-                curveTo(9f, 18.2239f, 9.22386f, 18f, 9.5f, 18f)
-                horizontalLineTo(18.5f)
-                curveTo(18.7761f, 18f, 19f, 18.2239f, 19f, 18.5f)
-                curveTo(19f, 18.7761f, 18.7761f, 19f, 18.5f, 19f)
-                horizontalLineTo(9.5f)
-                curveTo(9.22386f, 19f, 9f, 18.7761f, 9f, 18.5f)
-                close()
-                close()
-        }
-            path(
-                fill=SolidColor(Color.Black),
-        ){
-                moveTo(5f, 14.5f)
-                curveTo(5f, 14.2239f, 5.22386f, 14f, 5.5f, 14f)
-                horizontalLineTo(18.5f)
-                curveTo(18.7761f, 14f, 19f, 14.2239f, 19f, 14.5f)
-                curveTo(19f, 14.7761f, 18.7761f, 15f, 18.5f, 15f)
-                horizontalLineTo(5.5f)
-                curveTo(5.22386f, 15f, 5f, 14.7761f, 5f, 14.5f)
-                close()
-                close()
-        }
-            path(
-                fill=SolidColor(Color.Black),
-        ){
                 moveTo(4f, 3f)
-                curveTo(3.44772f, 3f, 3f, 3.44772f, 3f, 4f)
-                verticalLineTo(20f)
-                curveTo(3f, 20.5523f, 3.44772f, 21f, 4f, 21f)
                 horizontalLineTo(20f)
-                curveTo(20.5523f, 21f, 21f, 20.5523f, 21f, 20f)
+                curveTo(20.5523f, 3f, 21f, 3.44772f, 21f, 4f)
+                verticalLineTo(20f)
+                curveTo(21f, 20.5523f, 20.5523f, 21f, 20f, 21f)
+                horizontalLineTo(4f)
+                curveTo(3.44772f, 21f, 3f, 20.5523f, 3f, 20f)
                 verticalLineTo(4f)
-                curveTo(21f, 3.44772f, 20.5523f, 3f, 20f, 3f)
-                horizontalLineTo(4f)
+                curveTo(3f, 3.44772f, 3.44772f, 3f, 4f, 3f)
                 close()
-                moveTo(20f, 13f)
-                horizontalLineTo(4f)
+                moveTo(4f, 13f)
+                horizontalLineTo(20f)
                 verticalLineTo(19f)
-                curveTo(4f, 19.5523f, 4.44772f, 20f, 5f, 20f)
-                horizontalLineTo(19f)
-                curveTo(19.5523f, 20f, 20f, 19.5523f, 20f, 19f)
+                curveTo(20f, 19.5523f, 19.5523f, 20f, 19f, 20f)
+                horizontalLineTo(5f)
+                curveTo(4.44772f, 20f, 4f, 19.5523f, 4f, 19f)
                 verticalLineTo(13f)
                 close()
                 moveTo(9.53371f, 9.31866f)
@@ -1142,7 +1689,7 @@ object ZnIcons {
         }
         }
     
-    val NextControl: ImageVector = materialIcon(name = "Type=NextControl") {
+    val NextControlFilled: ImageVector = materialIcon(name = "Type=NextControl,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1166,7 +1713,7 @@ object ZnIcons {
         }
         }
     
-    val NotPerformed: ImageVector = materialIcon(name = "Type=NotPerformed") {
+    val NotPerformedFilled: ImageVector = materialIcon(name = "Type=NotPerformed,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1195,7 +1742,74 @@ object ZnIcons {
         }
         }
     
-    val Notifications: ImageVector = materialIcon(name = "Type=Notifications") {
+    val NotificationsOffFilled: ImageVector = materialIcon(name = "Type=NotificationsOff,Style=Filled") {
+        path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(17.6806f, 17.4f)
+                horizontalLineTo(5.59942f)
+                curveTo(4.86918f, 17.4f, 4.60281f, 16.4383f, 5.22898f, 16.0626f)
+                lineTo(6.59999f, 15.24f)
+                verticalLineTo(8.04f)
+                curveTo(6.59999f, 5.25649f, 8.85648f, 3f, 11.64f, 3f)
+                curveTo(14.4235f, 3f, 16.68f, 5.25648f, 16.68f, 8.04f)
+                verticalLineTo(14.8323f)
+                curveTo(16.68f, 15.0853f, 16.8127f, 15.3196f, 17.0296f, 15.4497f)
+                lineTo(18.051f, 16.0626f)
+                curveTo(18.6772f, 16.4383f, 18.4108f, 17.4f, 17.6806f, 17.4f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(10.2001f, 19.5599f)
+                horizontalLineTo(13.0801f)
+                curveTo(13.0801f, 20.3552f, 12.4354f, 20.9999f, 11.6401f, 20.9999f)
+                curveTo(10.8448f, 20.9999f, 10.2001f, 20.3552f, 10.2001f, 19.5599f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(10.2001f, 19.5599f)
+                horizontalLineTo(13.0801f)
+                verticalLineTo(18.5f)
+                horizontalLineTo(10.2001f)
+                verticalLineTo(19.5599f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(18.7323f, 9.4746f)
+                curveTo(18.5272f, 9.26958f, 18.5272f, 8.93716f, 18.7323f, 8.73214f)
+                curveTo(18.9373f, 8.52711f, 19.2697f, 8.52711f, 19.4747f, 8.73214f)
+                lineTo(22.2678f, 11.5252f)
+                curveTo(22.4728f, 11.7302f, 22.4728f, 12.0626f, 22.2678f, 12.2677f)
+                curveTo(22.0628f, 12.4727f, 21.7304f, 12.4727f, 21.5253f, 12.2677f)
+                lineTo(18.7323f, 9.4746f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(19.4747f, 12.2677f)
+                curveTo(19.2697f, 12.4727f, 18.9373f, 12.4727f, 18.7323f, 12.2677f)
+                curveTo(18.5272f, 12.0626f, 18.5272f, 11.7302f, 18.7323f, 11.5252f)
+                lineTo(21.5253f, 8.73214f)
+                curveTo(21.7304f, 8.52711f, 22.0628f, 8.52711f, 22.2678f, 8.73214f)
+                curveTo(22.4728f, 8.93716f, 22.4728f, 9.26958f, 22.2678f, 9.4746f)
+                lineTo(19.4747f, 12.2677f)
+                close()
+                close()
+        }
+        }
+    
+    val NotificationsFilled: ImageVector = materialIcon(name = "Type=Notifications,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1236,7 +1850,7 @@ object ZnIcons {
         }
         }
     
-    val Palette: ImageVector = materialIcon(name = "Type=Palette") {
+    val PaletteFilled: ImageVector = materialIcon(name = "Type=Palette,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1283,7 +1897,7 @@ object ZnIcons {
         }
         }
     
-    val Pause: ImageVector = materialIcon(name = "Type=Pause") {
+    val PauseFilled: ImageVector = materialIcon(name = "Type=Pause,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1316,7 +1930,7 @@ object ZnIcons {
         }
         }
     
-    val Photo: ImageVector = materialIcon(name = "Type=Photo") {
+    val PhotoOutline: ImageVector = materialIcon(name = "Type=Photo,Style=Outline") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1376,7 +1990,7 @@ object ZnIcons {
         }
         }
     
-    val Play: ImageVector = materialIcon(name = "Type=Play") {
+    val PlayFilled: ImageVector = materialIcon(name = "Type=Play,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1392,7 +2006,7 @@ object ZnIcons {
         }
         }
     
-    val Popular: ImageVector = materialIcon(name = "Type=Popular") {
+    val PopularFilled: ImageVector = materialIcon(name = "Type=Popular,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1453,7 +2067,7 @@ object ZnIcons {
         }
         }
     
-    val PreviousControl: ImageVector = materialIcon(name = "Type=PreviousControl") {
+    val PreviousControlFilled: ImageVector = materialIcon(name = "Type=PreviousControl,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1477,7 +2091,7 @@ object ZnIcons {
         }
         }
     
-    val Search: ImageVector = materialIcon(name = "Type=Search") {
+    val SearchOutline: ImageVector = materialIcon(name = "Type=Search,Style=Outline") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1510,7 +2124,7 @@ object ZnIcons {
         }
         }
     
-    val Security: ImageVector = materialIcon(name = "Type=Security") {
+    val SecurityFilled: ImageVector = materialIcon(name = "Type=Security,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1546,7 +2160,7 @@ object ZnIcons {
         }
         }
     
-    val Send: ImageVector = materialIcon(name = "Type=Send") {
+    val SendFilled: ImageVector = materialIcon(name = "Type=Send,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1568,7 +2182,7 @@ object ZnIcons {
         }
         }
     
-    val Settings: ImageVector = materialIcon(name = "Type=Settings") {
+    val SettingsFilled: ImageVector = materialIcon(name = "Type=Settings,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1718,7 +2332,7 @@ object ZnIcons {
         }
         }
     
-    val Share: ImageVector = materialIcon(name = "Type=Share") {
+    val ShareFilled: ImageVector = materialIcon(name = "Type=Share,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1759,7 +2373,7 @@ object ZnIcons {
         }
         }
     
-    val User: ImageVector = materialIcon(name = "Type=User") {
+    val UserAddFilled: ImageVector = materialIcon(name = "Type=UserAdd,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
                 stroke=SolidColor(Color.Black),
@@ -1773,7 +2387,62 @@ object ZnIcons {
                 curveTo(20.2518f, 20.1453f, 20.2492f, 20.1581f, 20.2468f, 20.1656f)
                 curveTo(20.2441f, 20.1741f, 20.2387f, 20.185f, 20.2275f, 20.197f)
                 curveTo(20.2047f, 20.2216f, 20.1578f, 20.2499f, 20.0864f, 20.2499f)
-                lineTo(3.9136f, 20.25f)
+                lineTo(3.91361f, 20.25f)
+                curveTo(3.84216f, 20.25f, 3.79531f, 20.2216f, 3.77249f, 20.1971f)
+                curveTo(3.76135f, 20.1851f, 3.75587f, 20.1742f, 3.75317f, 20.1656f)
+                curveTo(3.75081f, 20.1582f, 3.7482f, 20.1453f, 3.7517f, 20.1233f)
+                close()
+                moveTo(15.7445f, 7.50151f)
+                curveTo(15.7445f, 9.57452f, 14.0669f, 11.253f, 12f, 11.253f)
+                curveTo(9.93307f, 11.253f, 8.2555f, 9.57452f, 8.2555f, 7.50151f)
+                curveTo(8.2555f, 5.42851f, 9.93307f, 3.75f, 12f, 3.75f)
+                curveTo(14.0669f, 3.75f, 15.7445f, 5.42851f, 15.7445f, 7.50151f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(19.975f, 8.525f)
+                curveTo(19.975f, 8.23505f, 20.2101f, 8f, 20.5f, 8f)
+                curveTo(20.7899f, 8f, 21.025f, 8.23505f, 21.025f, 8.525f)
+                verticalLineTo(12.475f)
+                curveTo(21.025f, 12.7649f, 20.7899f, 13f, 20.5f, 13f)
+                curveTo(20.2101f, 13f, 19.975f, 12.7649f, 19.975f, 12.475f)
+                verticalLineTo(8.525f)
+                close()
+                close()
+        }
+            path(
+                fill=SolidColor(Color.Black),
+        ){
+                moveTo(18.525f, 11.025f)
+                curveTo(18.2351f, 11.025f, 18f, 10.7899f, 18f, 10.5f)
+                curveTo(18f, 10.2101f, 18.2351f, 9.975f, 18.525f, 9.975f)
+                horizontalLineTo(22.475f)
+                curveTo(22.7649f, 9.975f, 23f, 10.2101f, 23f, 10.5f)
+                curveTo(23f, 10.7899f, 22.7649f, 11.025f, 22.475f, 11.025f)
+                horizontalLineTo(18.525f)
+                close()
+                close()
+        }
+        }
+    
+    val UserFilled: ImageVector = materialIcon(name = "Type=User,Style=Filled") {
+        path(
+                fill=SolidColor(Color.Black),
+                stroke=SolidColor(Color.Black),
+                strokeLineWidth=1.5f,
+        ){
+                moveTo(3.7517f, 20.1233f)
+                curveTo(3.90884f, 19.1332f, 4.36524f, 17.5382f, 5.56346f, 16.2012f)
+                curveTo(6.73817f, 14.8903f, 8.69079f, 13.7533f, 12.0001f, 13.7533f)
+                curveTo(15.3093f, 13.7533f, 17.2619f, 14.8903f, 18.4366f, 16.2011f)
+                curveTo(19.6348f, 17.5382f, 20.0912f, 19.1331f, 20.2483f, 20.1232f)
+                curveTo(20.2518f, 20.1453f, 20.2492f, 20.1581f, 20.2468f, 20.1656f)
+                curveTo(20.2441f, 20.1741f, 20.2387f, 20.185f, 20.2275f, 20.197f)
+                curveTo(20.2047f, 20.2216f, 20.1578f, 20.2499f, 20.0864f, 20.2499f)
+                lineTo(3.91361f, 20.25f)
                 curveTo(3.84216f, 20.25f, 3.79531f, 20.2216f, 3.77249f, 20.1971f)
                 curveTo(3.76135f, 20.1851f, 3.75587f, 20.1742f, 3.75317f, 20.1656f)
                 curveTo(3.75081f, 20.1582f, 3.7482f, 20.1453f, 3.7517f, 20.1233f)
@@ -1788,7 +2457,7 @@ object ZnIcons {
         }
         }
     
-    val Verified: ImageVector = materialIcon(name = "Type=Verified") {
+    val VerifiedFilled: ImageVector = materialIcon(name = "Type=Verified,Style=Filled") {
         path(
                 fill=SolidColor(Color.Black),
         ){
@@ -1798,7 +2467,7 @@ object ZnIcons {
                 lineTo(9.90611f, 15.5603f)
                 curveTo(10.0986f, 15.7861f, 10.4107f, 15.7861f, 10.6032f, 15.5603f)
                 lineTo(19.317f, 5.33871f)
-                curveTo(19.702f, 4.8871f, 20.3262f, 4.8871f, 20.7112f, 5.33871f)
+                curveTo(19.702f, 4.8871f, 20.3263f, 4.8871f, 20.7113f, 5.33871f)
                 curveTo(21.0963f, 5.79033f, 21.0963f, 6.52255f, 20.7112f, 6.97417f)
                 lineTo(10.6036f, 18.8306f)
                 curveTo(10.411f, 19.0566f, 10.0986f, 19.0564f, 9.90616f, 18.8302f)
@@ -1808,5 +2477,5 @@ object ZnIcons {
         }
         }
     
-}
-    
+            }
+            

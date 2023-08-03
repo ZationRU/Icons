@@ -2,61 +2,95 @@ import { parse } from 'svg-parser';
 import parsePath from 'svg-path-parser';
 import fs from 'fs';
 import path from 'path';
+import { transform } from '@svgr/core'
+import shell from "shelljs";
 
 const icons = fs.readdirSync("./icons")
 
-const kotlinVectors = []
-const androidVectors = []
-for (const iconFileName of icons) {
-    const iconFileContents = fs.readFileSync("./icons/"+iconFileName, "utf8")
-    const outputFileName = iconFileName.replaceAll(/(\.svg)/ig, "")
-
-    const svg = parse(iconFileContents)
-
-    kotlinVectors.push({
-        name: outputFileName.replaceAll(' ', ''),
-        vector: generateKotlinImageVector(outputFileName.replaceAll(' ', ''), svg)
-    })
-
-    androidVectors.push({
-        name: outputFileName,
-        vector: generateAndroidImageVector(outputFileName, svg)
-    })
+const write = (file, data) => {
+    console.log("+ "+file)
+    fs.writeFileSync(file, data)
 }
 
-fs.writeFileSync("./output/jetpack/ZnIcons.kt",
-    `
-package ru.zation
-    
-import androidx.compose.material.icons.materialIcon
-import androidx.compose.material.icons.materialPath
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.graphics.vector.path
-    
-object ZnIcons {
-`+
-    (kotlinVectors.map(it => {
-        return `    val `+
-            it.name
-                .split(",")
-                .map(it => it.replaceAll(/.+?=/g, ''))
-                .join()
-                .replaceAll(',', '')
-            +`: ImageVector = `+it.vector.replaceAll("\n", "\n    ")
-    }).join('\n')) + `
+const remove = (file) => {
+    if(fs.existsSync(file)){
+        console.log("- "+file)
+        fs.unlinkSync(file)
+    }
 }
-    `
-)
 
 setTimeout(async () => {
-    for (const file of fs.readdirSync("./output/android")) {
-        fs.unlinkSync(path.join("./output/android", file));
+    const args = process.argv.slice(2);
+    if(args[0]==='clean') {
+        clean();
+        return;
     }
 
+    const kotlinVectors = []
+    const androidVectors = []
+    const jsVectors = []
+    for (const iconFileName of icons) {
+        const iconFileContents = fs.readFileSync("./icons/"+iconFileName, "utf8")
+        const outputFileName = iconFileName.replaceAll(/(\.svg)/ig, "")
+
+        console.log("Processing "+iconFileName+"...")
+
+        const svg = parse(iconFileContents)
+
+        kotlinVectors.push({
+            name: outputFileName.replaceAll(' ', ''),
+            vector: generateKotlinImageVector(outputFileName.replaceAll(' ', ''), svg)
+        })
+
+        androidVectors.push({
+            name: outputFileName,
+            vector: generateAndroidImageVector(outputFileName, svg)
+        })
+
+        const jsName = 'ZnUIIcon'+outputFileName
+            .split(",")
+            .map(it => it.replaceAll(/.+?=/g, ''))
+            .join()
+            .replaceAll(',', '')
+            .replaceAll(' ', '')
+
+        jsVectors.push({
+            name: jsName,
+            vector: await generateReactIcon(jsName, iconFileContents)
+        })
+    }
+
+
+    clean()
+
+    write("./output/jetpack/ZnIcons.kt",
+        `
+            package ru.zation
+                
+            import androidx.compose.material.icons.materialIcon
+            import androidx.compose.material.icons.materialPath
+            import androidx.compose.ui.graphics.Color
+            import androidx.compose.ui.graphics.SolidColor
+            import androidx.compose.ui.graphics.vector.ImageVector
+            import androidx.compose.ui.graphics.vector.path
+                
+            object ZnIcons {
+            `+
+                    (kotlinVectors.map(it => {
+                        return `    val `+
+                            it.name
+                                .split(",")
+                                .map(it => it.replaceAll(/.+?=/g, ''))
+                                .join()
+                                .replaceAll(',', '')
+                            +`: ImageVector = `+it.vector.replaceAll("\n", "\n    ")
+                    }).join('\n')) + `
+            }
+            `
+    )
+
     for (const androidVector of androidVectors) {
-        fs.writeFileSync("./output/android/ic_"+(
+        write("./output/android/ic_"+(
             androidVector.name
                 .replaceAll(' ', '_')
                 .split(",")
@@ -66,10 +100,57 @@ setTimeout(async () => {
                 .toLowerCase()
         ) +".xml", androidVector.vector)
     }
+
+    for (const vector of jsVectors) {
+        write("./packages/@znui/icons/src/"+vector.name+".tsx", vector.vector)
+    }
+
+    write("./packages/@znui/icons/src/index.tsx", jsVectors.map(vector =>
+        'export { default as '+vector.name+' } from "./'+vector.name+'"'
+    ).join(";\n"))
+
+    console.log("> TypeScript Compile")
+    shell.exec("npm run --prefix ./packages/@znui/icons compile")
 })
+
+function clean() {
+    remove("./output/jetpack/ZnIcons.kt")
+
+    for (const file of fs.readdirSync("./output/android")) {
+        remove(path.join("./output/android", file));
+    }
+
+    for (const file of fs.readdirSync("./packages/@znui/icons/src")) {
+        remove(path.join("./packages/@znui/icons/src", file));
+    }
+
+    for (const file of fs.readdirSync("./packages/@znui/icons/dist")) {
+        remove(path.join("./packages/@znui/icons/dist", file));
+    }
+}
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function generateReactIcon(name, svg) {
+    return transform(
+        svg,
+        {
+            plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx', '@svgr/plugin-prettier'],
+            icon: true,
+            exportType: 'default',
+            replaceAttrValues: {
+                '#000': 'currentColor'
+            },
+            svgoConfig: {
+                removeViewBox: true
+            }
+        },
+        {
+            componentName: name,
+        },
+    )
 }
 
 function generateAndroidImageVector(name, svg) {

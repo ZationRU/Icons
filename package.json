@@ -1,9 +1,24 @@
 {
-  "name": "icons-svg-generator",
+  "name": "@znui/icons-builder",
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
+    "shelljs": "^0.8.5",
     "svg-parser": "^2.0.4",
     "svg-path-parser": "^1.1.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "generate-icons": "node builder.js",
+    "clean": "node builder.js clean"
+  },
+  "devDependencies": {
+    "@svgr/core": "^8.0.0",
+    "@svgr/plugin-jsx": "^8.0.1",
+    "@svgr/plugin-prettier": "^8.0.1",
+    "@svgr/plugin-svgo": "^8.0.1"
   }
 }
